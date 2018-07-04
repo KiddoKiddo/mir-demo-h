@@ -91,7 +91,7 @@ def script():
 
     input_string = request.form['value']
     if (input_string == 'Bring_Empty_Trolley_NTX1000') :   #Bring back Empty Trolley from NTX1000 to warehouse
-        print("TEST")
+        
     	headers = {'Content-type': 'application/json', 'Authorization': 'Basic YWRtaW46OGM2OTc2ZTViNTQxMDQxNWJkZTkwOGJkNGRlZTE1ZGZiMTY3YTljODczZmM0YmI4YTgxZjZmMmFiNDQ4YTkxOA=='}
         r = requests.post('http://10.100.108.210:8080/v2.0.0/mission_queue', json ={"mission_id":"97b0f8eb-4855-11e8-a4e3-f44d306f3f85"}, headers=headers)  #1.start position
         print(r.text)
