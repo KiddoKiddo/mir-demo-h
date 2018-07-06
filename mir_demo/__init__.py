@@ -302,7 +302,7 @@ def script():
     input_string = request.form['value']
     if (input_string == 'Initialize_AGV') :   #STOP the AGV and clear up all missions in the MIR robot
     	headers = {'Content-type': 'application/json', 'Authorization': 'Basic YWRtaW46OGM2OTc2ZTViNTQxMDQxNWJkZTkwOGJkNGRlZTE1ZGZiMTY3YTljODczZmM0YmI4YTgxZjZmMmFiNDQ4YTkxOA=='}
-	r = requests.delete('http://10.100.108.210:8080/v2.0.0/mission_queue')
+	r = requests.delete('http://10.100.108.210:8080/v2.0.0/mission_queue', headers=headers)
 	print(r.text)
         r = requests.post('http://10.100.108.210:8080/v2.0.0/mission_queue', json ={"mission_id":"97b0f8eb-4855-11e8-a4e3-f44d306f3f85"}, headers=headers)  #1.start position
         print(r.text)
